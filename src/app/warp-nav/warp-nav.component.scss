@@ -1,0 +1,89 @@
+@import '../../../node_modules/warp.css/scss/base/typography';
+@import '../../../node_modules/warp.css/scss/layout/x-padding';
+
+$toolbar-height: 4.375rem;
+
+.sidenav-container {
+  height: 100vh;
+
+  .nav-link {
+    color: $normal-text-color;
+    font-size: 1.25rem;
+    transition: all .5s ease-in-out;
+
+    &.active,
+    &:hover {
+      span {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .sidenav {
+    width: 15.625rem; // 250px
+    background-color: $background-color;
+
+    mat-toolbar {
+      background-color: $background-color;
+      padding-left: 3rem;
+      svg {
+        width: 2.1875rem;
+        height: 2.1875rem;
+      }
+    }
+
+    mat-nav-list {
+      margin-top: $toolbar-height;
+
+      .nav-link {
+        padding-left: 2rem;
+      }
+    }
+  }
+
+  mat-sidenav-content {
+    background-color: $background-color;
+
+    mat-toolbar {
+      @extend .x-padding;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      height: $toolbar-height;
+      z-index: 1;
+      background-color: $background-color;
+      color: $normal-text-color;
+
+      #menuIcon {
+        background-color: $background-color;
+        margin-right: 1.25rem;
+        padding: 0.625rem;
+        color: $normal-text-color;
+        font-size: 1.875rem;
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      #navbar-logo {
+        width: 2.1875rem;
+        height: 2.1875rem;
+        display: block;
+      }
+
+      mat-nav-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0;
+        margin-left: auto;
+      }
+    }
+
+    #router-outlet-container {
+      position: relative;
+    }
+  }
+}

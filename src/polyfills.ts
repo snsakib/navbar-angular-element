@@ -61,3 +61,9 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+ import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
+
+ if(!window['customElements']) {
+   document.write(`<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.3.0/webcomponents-loader.js">`);
+ }
